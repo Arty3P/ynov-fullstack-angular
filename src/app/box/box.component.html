@@ -1,0 +1,7 @@
+<div class="box" [ngClass]="{ 'box--clicked': clicked }" (click)="onClick()">
+	<div class="circle" [style.background-color]="color"></div>
+	<div class="content">
+		<b>Headline {{ id }}</b>
+		<p>{{ text }}</p>
+	</div>
+</div>

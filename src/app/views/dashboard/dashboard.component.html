@@ -1,0 +1,43 @@
+<div class="content" role="main" [formGroup]="form">
+	<h1 [style.color]="color">{{ title }}</h1>
+
+	<button (click)="clickButton()">click me</button>
+
+	<pre *ngIf="showPre">jour / nuit</pre>
+
+	<app-item [title]="'oui'" (showTitle)="showEmit($event)"></app-item>
+	<app-item [title]="'non'" (showTitle)="showEmit($event)"></app-item>
+	<app-item [title]="':)'" (showTitle)="showEmit($event)"></app-item>
+
+	<hr />
+
+	<h2>Boucle</h2>
+
+	<app-box
+		*ngFor="let box of boxes"
+		[id]="box.id"
+		[text]="'lorem ipsum'"
+		[color]="box.color"
+		(removeBox)="removeBox($event)">
+	</app-box>
+
+	<hr/>
+
+	<h2>Call Api Rick & Morti</h2>
+
+	<div class="characters-container">
+		<div *ngFor="let character of characters" class="characters">
+			<img [src]="character.image" alt="img" />
+			<span>{{ character.name }}</span>
+			<span style="margin: 0 5px;">| Origine :</span>
+			<span>{{ character.origin.name }}</span>
+		</div>
+	</div>
+
+	<hr />
+
+	<h2>Formulaire ({{ 'Formulaire' | uppercase | reverse }})</h2>
+
+	<pre>value : {{ formName?.value }}</pre>
+	<input type="text" formControlName="name" (keydown.enter)="addCharacter()" />
+</div>

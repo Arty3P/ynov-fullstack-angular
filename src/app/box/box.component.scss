@@ -1,0 +1,32 @@
+.box {
+	background-color: #c2c3c4;
+	border-radius: 15px;
+	padding: .5rem .75rem;
+	display: flex;
+	align-items: center;
+	margin-bottom: .5rem;
+
+	min-width: 300px;
+
+	transition-duration: 1s;
+
+	.circle {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+
+	.content {
+		width: 75%;
+		padding: 0 1rem;
+
+		p {
+			margin-top: 5px;
+			margin-bottom: 0;
+		}
+	}
+
+	&.box--clicked {
+		transform: translateX(-1500px);
+	}
+}
